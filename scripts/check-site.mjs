@@ -2,11 +2,12 @@ import { readFileSync } from 'node:fs';
 
 const html = readFileSync('index.html', 'utf8');
 const required = [
-  'Your space is not trash. It just needs a reset.',
+  'Reset your garage. Reclaim your space.',
   'kdfWc9XF68KHtR1sByh8',
   'Request your reset quote',
   'no pasted photo links needed',
-  'ineedareset.co'
+  'ineedareset.co',
+  'assets/reset-logo.png'
 ];
 
 const banned = [
