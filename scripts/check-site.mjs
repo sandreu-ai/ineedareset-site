@@ -6,6 +6,8 @@ const required = [
   'kdfWc9XF68KHtR1sByh8',
   'Request your reset quote',
   'no pasted photo links needed',
+  'Call or text',
+  'RESET call or text card',
   'ineedareset.co',
   'assets/reset-logo.png'
 ];
@@ -25,5 +27,25 @@ for (const text of banned) {
   if (html.includes(text)) {
     throw new Error(`Banned wording still present: ${text}`);
   }
+}
+
+const galleryOrder = [
+  'Cluttered garage before Reset job one',
+  'Clean garage after Reset job one',
+  'Garage storage project before Reset job two',
+  'Organized garage view after Reset job two',
+  'Reset local crew trailer signage',
+  'RESET call or text card'
+];
+let lastIndex = -1;
+for (const text of galleryOrder) {
+  const index = html.indexOf(text);
+  if (index === -1) {
+    throw new Error(`Missing gallery item: ${text}`);
+  }
+  if (index <= lastIndex) {
+    throw new Error(`Gallery item out of order: ${text}`);
+  }
+  lastIndex = index;
 }
 console.log('Site content check passed.');
