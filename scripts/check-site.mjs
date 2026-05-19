@@ -9,7 +9,17 @@ const required = [
   'Call or text',
   'RESET call or text card',
   'ineedareset.co',
-  'assets/reset-logo.png'
+  'assets/reset-logo.png',
+  '$99 Virtual Garage Reset Plan',
+  '$199 In-Person Garage Reset Plan',
+  'Free AI-assisted concept mockup',
+  'Full $99 credited toward a booked Reset project within 30 days',
+  'Full $199 credited toward a booked Reset project within 30 days',
+  'One photo facing the garage door',
+  'One photo facing the back wall',
+  'One photo from a corner near the garage door',
+  'Rough garage dimensions, if you know them',
+  'Your main goal for the garage'
 ];
 
 const banned = [

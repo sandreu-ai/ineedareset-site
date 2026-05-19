@@ -206,14 +206,20 @@ nav a:hover::after { transform: scaleX(1); }
 .steps { display: grid; gap: 16px; }
 .steps article,
 .service-grid article,
+.plan-card,
+.photo-requirements,
 .faq details,
 .form-card { background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(224,226,226,0.88)), linear-gradient(135deg, #ffffff, #a7aaa9 42%, #f3f4f4); border: 1px solid rgba(255,255,255,0.54); color: var(--charcoal); box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.88); }
 .steps article { padding: 24px; border-radius: 24px; }
 .steps span { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 14px; border-radius: 999px; background: linear-gradient(180deg, var(--reset-red-hot), var(--reset-red-dark)); color: var(--white); font-weight: 1000; box-shadow: var(--red-glow); }
 .steps h3,
-.service-grid h3 { margin: 0 0 8px; color: var(--graphite); font-size: 1.22rem; text-transform: uppercase; letter-spacing: -0.02em; }
+.service-grid h3,
+.plan-card h3,
+.photo-requirements h3 { margin: 0 0 8px; color: var(--graphite); font-size: 1.22rem; text-transform: uppercase; letter-spacing: -0.02em; }
 .steps p,
-.service-grid p { margin: 0; color: #515557; }
+.service-grid p,
+.plan-card p,
+.photo-requirements p { margin: 0; color: #515557; }
 .feature-band { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 32px; background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent), repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 6px), linear-gradient(135deg, #101214, #2f3234 48%, #08090a); border-block: 1px solid rgba(255,255,255,0.16); color: var(--white); }
 .feature-band .eyebrow { color: var(--reset-red-hot); }
 .feature-band h2 { color: var(--white); }
@@ -223,6 +229,21 @@ nav a:hover::after { transform: scaleX(1); }
 .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
 .service-grid article { padding: 26px; border-radius: 26px; transition: transform 180ms ease; }
 .service-grid article:hover { transform: translateY(-4px); }
+.plans-section { display: grid; gap: 22px; }
+.plans-intro { max-width: 1120px; }
+.plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.plan-card { position: relative; padding: 28px; border-radius: 28px; overflow: hidden; }
+.plan-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(90deg, var(--reset-red-hot), var(--reset-red-dark)); }
+.featured-plan { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(224,226,226,0.92)), var(--metal-sheen); border-color: rgba(237,28,36,0.36); }
+.plan-kicker { display: inline-flex; margin-bottom: 14px !important; padding: 8px 11px; border-radius: 999px; background: linear-gradient(180deg, var(--reset-red-hot), var(--reset-red-dark)); color: var(--white) !important; font-size: 0.74rem !important; font-weight: 1000; letter-spacing: 0.12em; text-transform: uppercase; }
+.plan-summary { margin: 12px 0 18px !important; font-size: 1.02rem !important; }
+.plan-card ul { display: grid; gap: 10px; padding: 0; margin: 20px 0 24px; list-style: none; }
+.plan-card li { position: relative; padding-left: 28px; color: #363a3c; line-height: 1.48; font-weight: 800; }
+.plan-card li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--reset-red-dark); font-weight: 1000; }
+.photo-requirements { padding: 26px; border-radius: 28px; }
+.requirement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+.requirement-grid div { padding: 16px; border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(215,217,216,0.48)); border-left: 4px solid var(--reset-red); color: var(--graphite); font-weight: 900; line-height: 1.42; }
+.mockup-note { margin-top: 18px !important; padding: 14px 16px; border-radius: 16px; background: rgba(47,50,52,0.08); border: 1px solid var(--dark-line); font-size: 0.96rem !important; }
 .quote-section { align-items: stretch; }
 .quote-copy { position: sticky; top: 110px; align-self: start; }
 .service-area,
@@ -267,7 +288,9 @@ footer a,
   .split,
   .feature-band,
   .quote-section,
-  .service-grid { grid-template-columns: 1fr; }
+  .service-grid,
+  .plan-grid,
+  .requirement-grid { grid-template-columns: 1fr; }
   .hero { padding-top: 42px; }
   .hero-gallery,
   .gallery-scroll { min-height: 440px; height: 440px; }
