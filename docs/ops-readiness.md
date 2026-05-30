@@ -7,16 +7,17 @@ Privacy rule: this file intentionally excludes secrets, customer records, raw CR
 ## Repo/deploy status
 
 - Canonical repo verified locally: `https://github.com/sandreu-ai/ineedareset-site.git`.
-- Local branch state during audit: `main` is ahead of `origin/main` by commit `5a22cf2` (`Update Reset website phone number`).
-- `5a22cf2` changes the public phone number and brand-card asset.
-- Local Vercel CLI auth check returned: no existing credentials. Deployment cannot be completed from this environment without `vercel login` or a scoped `VERCEL_TOKEN`.
+- Commit `5a22cf2` changed the public phone number and brand-card asset.
+- Commit `6ce40eb` added the ops-readiness docs/checks and was pushed to `origin/main`.
+- Vercel CLI auth remains unavailable locally, but the GitHub → Vercel integration deployed commit `6ce40eb` successfully.
+- Live HTTP verification after deploy: `https://ineedareset.co` and `https://www.ineedareset.co` both returned HTTP 200.
 
-Exact deployment fix path:
+Deployment verification performed:
 
-1. From an authenticated shell, run `vercel login` or set a scoped `VERCEL_TOKEN` securely.
-2. In `/home/sandreu/projects/ineedareset-site`, deploy the current branch/commit with the intended Vercel project linked.
-3. Promote to production for `ineedareset.co` and `www.ineedareset.co`.
-4. Verify the live site shows `(214) 682-3435`, the embedded GHL form ID `kdfWc9XF68KHtR1sByh8`, and no banned `clean-out` positioning copy.
+1. Pushed `main` to `https://github.com/sandreu-ai/ineedareset-site.git`.
+2. Checked GitHub commit status for `6ce40eb`; Vercel returned `success` / `Deployment has completed`.
+3. Verified both production domains returned HTTP 200.
+4. Verified the live HTML includes the embedded GHL form ID `kdfWc9XF68KHtR1sByh8` and tap-to-text links.
 
 ## Controlled quote-form email receipt
 

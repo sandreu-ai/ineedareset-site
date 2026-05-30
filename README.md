@@ -4,7 +4,7 @@ Static landing page for the Reset quote funnel.
 
 Canonical production repository: `https://github.com/sandreu-ai/ineedareset-site.git`
 
-Current deployment blocker: local Vercel CLI has no credentials in this environment. Run `vercel login` or deploy with a scoped token from an authenticated environment, then promote the local `main` commit `5a22cf2` or a newer commit.
+Deployment status: GitHub push triggered Vercel successfully for commit `6ce40eb`, which includes the phone-number update from `5a22cf2` plus the ops-readiness docs/checks. `https://ineedareset.co` and `https://www.ineedareset.co` returned HTTP 200 after deployment.
 
 ## Public form
 
@@ -30,4 +30,4 @@ npm run start
 
 - Controlled quote-form email receipt: submit the embedded GHL form with a QA-only lead and verify owner/customer email receipts inside the destination inbox/GHL workflow logs.
 - Voice AI forwarded-call logging: place one controlled forwarded call and verify the call appears in GHL Conversations/phone logs with the expected contact attribution and owner notification.
-- Deployment auth: this environment cannot deploy because Vercel CLI returns `No existing credentials found`; authenticate or provide `VERCEL_TOKEN` in a secure environment before running deployment commands.
+- Deployment auth: resolved through GitHub → Vercel integration for commit `6ce40eb`; CLI auth is still unavailable locally, but production deployment no longer blocks the current site update.
