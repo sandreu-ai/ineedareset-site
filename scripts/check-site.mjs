@@ -7,6 +7,7 @@ const required = [
   'Request your reset quote',
   'no pasted photo links needed',
   'Call or text',
+  'sms:+12146823435',
   'RESET call or text card',
   'ineedareset.co',
   'assets/reset-logo.png',
@@ -25,7 +26,8 @@ const required = [
 const banned = [
   'What needs to be cleaned out?',
   'Photos link, if available',
-  'clean-out'
+  'clean-out',
+  'sms:+121****3435'
 ];
 
 for (const text of required) {
