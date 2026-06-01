@@ -26,6 +26,18 @@ npm run start
 - Target domain: `ineedareset.co` and `www.ineedareset.co`.
 - Public phone display and `sms:` links should resolve to `(214) 682-3435` / `+12146823435`.
 
+## Admin gallery upload
+
+The private gallery upload page lives at `/admin.html` and uses Vercel serverless functions.
+
+Required Vercel environment variables:
+
+- `RESET_ADMIN_PASSWORD`: owner/admin upload password.
+- `RESET_ADMIN_SESSION_SECRET`: random signing secret for the admin session cookie.
+- `BLOB_READ_WRITE_TOKEN`: Vercel Blob token for public gallery photo storage.
+
+The admin page is noindexed and blocked in `robots.txt`. Uploads are compressed in-browser before being sent to `/api/gallery-upload`.
+
 ## Ops blockers that require external access
 
 - Controlled quote-form email receipt: submit the embedded GHL form with a QA-only lead and verify owner/customer email receipts inside the destination inbox/GHL workflow logs.

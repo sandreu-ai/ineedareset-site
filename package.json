@@ -1,1 +1,9 @@
-{"scripts":{"start":"python3 -m http.server 4173","check":"node scripts/check-site.mjs"}}
+{
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "check": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "latest"
+  }
+}

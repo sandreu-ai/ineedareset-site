@@ -308,3 +308,22 @@ footer a,
   .form-card { min-height: 900px; padding: 4px; border-radius: 20px; }
   .form-fallback { align-items: flex-start; flex-direction: column; }
 }
+
+
+.simple-hero { min-height: auto; }
+.gallery-grid-preview,
+.gallery-page-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.gallery-page-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.gallery-card { overflow: hidden; border-radius: 26px; background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(224,226,226,0.88)); color: var(--charcoal); border: 1px solid rgba(255,255,255,0.5); box-shadow: var(--shadow); }
+.gallery-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.gallery-card div { padding: 22px; }
+.gallery-card h3 { margin: 0 0 8px; color: var(--graphite); text-transform: uppercase; letter-spacing: -0.02em; }
+.gallery-card p { color: #515557; }
+.admin-form { display: grid; gap: 16px; margin-top: 26px; max-width: 620px; }
+.admin-form label { display: grid; gap: 8px; color: var(--steel-light); font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+.admin-form input,
+.admin-form select,
+.admin-form textarea { width: 100%; border: 1px solid rgba(255,255,255,0.24); border-radius: 16px; padding: 14px 16px; background: rgba(255,255,255,0.94); color: var(--charcoal); font: inherit; text-transform: none; letter-spacing: normal; }
+.admin-status { margin-top: 18px; font-weight: 900; }
+.site-footer a { color: var(--steel-light); }
+@media (max-width: 900px) { .gallery-grid-preview { grid-template-columns: 1fr; } }

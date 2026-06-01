@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>RESET Admin Gallery Upload</title>
+
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#111315" />
+    <link rel="stylesheet" href="./styles.css" />
+
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RESET home"><img src="./assets/reset-logo.png" alt="RESET" /></a>
+      <nav aria-label="Primary navigation">
+        <a href="./#how-it-works">How it works</a>
+        <a href="./#reset-plans">Reset plans</a>
+        <a href="./ellis-county-garage-reset.html">Ellis County</a>
+        <a href="./gallery.html">Gallery</a>
+        <a class="nav-cta" href="./#quote">Get quote</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero simple-hero">
+        <div class="hero-copy admin-panel">
+          <p class="eyebrow">Private admin</p>
+          <h1>Upload before / after gallery photos.</h1>
+          <p class="hero-lede">This page is protected by a server-side password cookie. Uploads are compressed in the browser, then stored through the Vercel API when the required environment variables are configured.</p>
+          <form id="loginForm" class="admin-form">
+            <label>Admin password <input type="password" name="password" autocomplete="current-password" required /></label>
+            <button class="button primary" type="submit">Log in</button>
+          </form>
+          <form id="uploadForm" class="admin-form" hidden>
+            <label>Project title <input name="title" required placeholder="Waxahachie garage reset" /></label>
+            <label>City <input name="city" placeholder="Waxahachie" /></label>
+            <label>Stage <select name="stage"><option>Before</option><option>After</option><option>Progress</option></select></label>
+            <label>Short note <textarea name="note" rows="3" placeholder="What changed in this reset?"></textarea></label>
+            <label>Photo <input type="file" name="photo" accept="image/*" required /></label>
+            <button class="button primary" type="submit">Upload photo</button>
+          </form>
+          <p id="adminStatus" class="admin-status" role="status"></p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <strong>RESET</strong>
+      <span>Garage and space resets for Ellis County families.</span>
+      <a href="./admin.html">Admin</a>
+    </footer>
+    <script src="./assets/admin.js" defer></script>
+  </body>
+</html>
