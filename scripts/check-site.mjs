@@ -9,6 +9,8 @@ const files = [
   'red-oak-garage-reset.html',
   'ovilla-garage-reset.html',
   'ennis-garage-reset.html',
+  'privacy.html',
+  'terms.html',
   'admin.html',
   'api/admin-login.js',
   'api/gallery-upload.js',
@@ -26,7 +28,9 @@ const sitemap = readFileSync('sitemap.xml', 'utf8');
 const adminApi = readFileSync('api/gallery-upload.js', 'utf8');
 const required = [
   'Reset your garage. Reclaim your space.',
-  'kdfWc9XF68KHtR1sByh8',
+  '6a1f571c2b348da0f75c1cf7',
+  'privacy.html',
+  'terms.html',
   'Before / after proof',
   'LocalBusiness',
   'gallery.html',
@@ -39,7 +43,7 @@ const required = [
 for (const text of required) {
   if (!index.includes(text) && !sitemap.includes(text)) throw new Error(`Missing required text: ${text}`);
 }
-const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?'];
+const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?', 'api.leadconnectorhq.com/widget/form', 'link.msgsndr.com/js/form_embed.js', 'data-form-id=', 'sms:+'];
 for (const file of files.filter(file => file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.txt'))) {
   const text = readFileSync(file, 'utf8');
   for (const phrase of banned) {
