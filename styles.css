@@ -21,7 +21,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -32,6 +32,7 @@ body {
     linear-gradient(116deg, rgba(255,255,255,0.08), transparent 20%, rgba(255,255,255,0.09) 42%, transparent 62%),
     linear-gradient(135deg, #050607 0%, #151719 25%, #3a3e41 49%, #111315 74%, #070809 100%);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 body::before {
   content: "";
@@ -338,6 +339,10 @@ footer a,
   .form-card,
   .hero-gallery { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+@media (max-width: 1400px) {
+  nav { gap: 13px; font-size: 0.72rem; }
+  nav a:nth-of-type(n+9):not(.nav-cta) { display: none; }
 }
 @media (max-width: 1080px) {
   nav a:not(.nav-cta) { display: none; }
