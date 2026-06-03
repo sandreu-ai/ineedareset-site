@@ -28,7 +28,7 @@ const sitemap = readFileSync('sitemap.xml', 'utf8');
 const adminApi = readFileSync('api/gallery-upload.js', 'utf8');
 const required = [
   'Reset your garage. Reclaim your space.',
-  '6a1f571c2b348da0f75c1cf7',
+  'kdfWc9XF68KHtR1sByh8',
   'privacy.html',
   'terms.html',
   'Before / after proof',
@@ -43,7 +43,7 @@ const required = [
 for (const text of required) {
   if (!index.includes(text) && !sitemap.includes(text)) throw new Error(`Missing required text: ${text}`);
 }
-const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?', 'api.leadconnectorhq.com/widget/form', 'link.msgsndr.com/js/form_embed.js', 'data-form-id=', 'sms:+'];
+const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?', '6a1f571c2b348da0f75c1cf7', 'chat-widget/loader.js'];
 for (const file of files.filter(file => file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.txt'))) {
   const text = readFileSync(file, 'utf8');
   for (const phrase of banned) {
