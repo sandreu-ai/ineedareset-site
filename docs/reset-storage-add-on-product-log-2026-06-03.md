@@ -4,6 +4,8 @@ Last researched: 2026-06-03
 
 Purpose: internal RESET sourcing/reference log for storage add-ons that may be advertised on the website and discussed with customers. Prices are live-market snapshots, not guaranteed vendor pricing. Re-check before quoting or buying.
 
+Research limitation: Amazon product pages were accessible during this pass, so the first clean priced SKU set is Amazon-heavy. Home Depot returned an error page and Lowe’s returned access denied in the browser session; use this log as the working baseline, then re-check Home Depot/Lowe’s manually or from a normal browser before buying if you want local pickup/comparison pricing.
+
 Important publishing note: retailer product photos are for internal reference/client explanation only unless licensing/affiliate/permission is confirmed. The website should use RESET-branded graphics/copy, not copied retailer photos.
 
 ## Recommended customer-facing offer structure
