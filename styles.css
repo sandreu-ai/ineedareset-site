@@ -230,6 +230,9 @@ nav a:hover::after { transform: scaleX(1); }
 .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
 .service-grid article { padding: 26px; border-radius: 26px; transition: transform 180ms ease; }
 .service-grid article:hover { transform: translateY(-4px); }
+.service-areas-section { display: grid; gap: 20px; }
+.service-areas-intro { max-width: 1120px; }
+.service-area-grid div { min-height: 132px; }
 .plans-section { display: grid; gap: 22px; }
 .plans-intro { max-width: 1120px; }
 .plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
