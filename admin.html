@@ -4,21 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>RESET Admin Gallery Upload</title>
-
+    <title>RESET Gallery Manager</title>
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#111315" />
-    <link rel="stylesheet" href="./styles.css" />
-
+    <link rel="stylesheet" href="./styles.css?v=gallery-manager-20260608" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="./" aria-label="RESET home"><img src="./assets/reset-logo.png" alt="RESET" /></a>
       <nav aria-label="Primary navigation">
         <a href="./#how-it-works">How it works</a>
-        <a href="./#reset-plans">Reset plans</a>
-        <a href="./ellis-county-garage-reset.html">Ellis County</a>
         <a href="./gallery.html">Gallery</a>
+        <a href="./#quote">Quote form</a>
         <a class="nav-cta" href="./#quote">Get quote</a>
       </nav>
     </header>
@@ -26,20 +23,44 @@
       <section class="hero simple-hero">
         <div class="hero-copy admin-panel">
           <p class="eyebrow">Private admin</p>
-          <h1>Upload before / after gallery photos.</h1>
-          <p class="hero-lede">This page is protected by a server-side password cookie. Uploads are compressed in the browser, then stored through the Vercel API when the required environment variables are configured.</p>
+          <h1>Manage before / after gallery photos.</h1>
+          <p class="hero-lede">Upload new photos, edit captions, mark featured images, delete gallery entries, and move photos up or down to control the order on the public gallery. The homepage proof strip uses featured gallery photos.</p>
+
+          <div class="admin-warning" role="note">
+            <strong>Privacy check before publishing:</strong>
+            blur or crop house numbers, license plates, customer names, documents, faces/minors, mailboxes, and street signs before uploading.
+          </div>
+
           <form id="loginForm" class="admin-form">
             <label>Admin password <input type="password" name="password" autocomplete="current-password" required /></label>
             <button class="button primary" type="submit">Log in</button>
           </form>
-          <form id="uploadForm" class="admin-form" hidden>
-            <label>Project title <input name="title" required placeholder="Waxahachie garage reset" /></label>
-            <label>City <input name="city" placeholder="Waxahachie" /></label>
-            <label>Stage <select name="stage"><option>Before</option><option>After</option><option>Progress</option></select></label>
-            <label>Short note <textarea name="note" rows="3" placeholder="What changed in this reset?"></textarea></label>
-            <label>Photo <input type="file" name="photo" accept="image/*" required /></label>
-            <button class="button primary" type="submit">Upload photo</button>
-          </form>
+
+          <section id="managerPanel" class="admin-manager" hidden>
+            <form id="uploadForm" class="admin-form admin-upload-card">
+              <h2>Add a new gallery photo</h2>
+              <label>Project title <input name="title" required placeholder="Waxahachie garage reset" /></label>
+              <label>City <input name="city" placeholder="Waxahachie" /></label>
+              <label>Stage <select name="stage"><option>Before</option><option>After</option><option>Progress</option><option>Reset</option></select></label>
+              <label>Short note <textarea name="note" rows="3" placeholder="What changed in this reset?"></textarea></label>
+              <label><span><input type="checkbox" name="featured" checked /> Feature this photo on homepage proof areas</span></label>
+              <label>Photo <input type="file" name="photo" accept="image/*" required /></label>
+              <button class="button primary" type="submit">Upload photo</button>
+            </form>
+
+            <div class="admin-toolbar">
+              <div>
+                <h2>Current gallery order</h2>
+                <p>Use the arrows to move photos. Edit text inline, then click <strong>Save gallery order</strong>.</p>
+              </div>
+              <div class="hero-actions">
+                <button id="reloadGallery" class="button secondary" type="button">Reload</button>
+                <button id="saveGallery" class="button primary" type="button">Save gallery order</button>
+              </div>
+            </div>
+            <div id="galleryManagerList" class="gallery-manager-list" aria-live="polite"></div>
+          </section>
+
           <p id="adminStatus" class="admin-status" role="status"></p>
         </div>
       </section>
@@ -47,7 +68,7 @@
     <footer class="site-footer">
       <strong>RESET</strong>
       <span>Garage and space resets for Ellis County families.</span>
-      <a href="./admin.html">Admin</a>
+      <a href="./gallery.html">Public gallery</a>
       <a href="./privacy.html">Privacy Policy</a>
       <a href="./terms.html">Terms of Service</a>
     </footer>

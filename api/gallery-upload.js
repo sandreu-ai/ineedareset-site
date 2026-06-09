@@ -1,11 +1,11 @@
-const { put, list } = require('@vercel/blob');
+const { put } = require('@vercel/blob');
 const { verifySession } = require('./_auth');
-const MANIFEST = 'reset-gallery/manifest.json';
+const { readManifest, sanitizeItems, MANIFEST } = require('./gallery');
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
   if (!verifySession(req)) return res.status(401).json({ error: 'Unauthorized' });
   if (!process.env.BLOB_READ_WRITE_TOKEN) return res.status(503).json({ error: 'Photo storage is not configured yet. Add BLOB_READ_WRITE_TOKEN in Vercel.' });
-  const { title, city, stage, note, fileName, contentType, dataUrl } = req.body || {};
+  const { title, city, stage, note, featured, fileName, contentType, dataUrl } = req.body || {};
   if (!title || !dataUrl || !String(dataUrl).startsWith('data:image/')) return res.status(400).json({ error: 'Missing title or image.' });
   const base64 = String(dataUrl).split(',')[1];
   const buffer = Buffer.from(base64, 'base64');
@@ -21,18 +21,13 @@ module.exports = async function handler(req, res) {
     stage: String(stage || 'Reset').slice(0, 30),
     note: String(note || '').slice(0, 240),
     alt: `${stage || 'Reset'} photo for ${title}`,
+    source: 'uploaded',
+    featured: featured !== false,
     createdAt: new Date().toISOString(),
   };
-  let items = [];
-  try {
-    const blobs = await list({ prefix: MANIFEST, limit: 1 });
-    if (blobs.blobs && blobs.blobs[0]) {
-      const response = await fetch(blobs.blobs[0].url);
-      const manifest = await response.json();
-      items = Array.isArray(manifest.items) ? manifest.items : [];
-    }
-  } catch (_) {}
-  items = [item, ...items].slice(0, 80);
+  const manifest = await readManifest();
+  const existing = Array.isArray(manifest.items) ? manifest.items : [];
+  const items = sanitizeItems([item, ...existing]).slice(0, 120);
   await put(MANIFEST, JSON.stringify({ updatedAt: new Date().toISOString(), items }, null, 2), { access: 'public', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: true });
   return res.status(200).json({ ok: true, url: uploaded.url, item });
 };

@@ -14,7 +14,9 @@ const files = [
   'admin.html',
   'api/admin-login.js',
   'api/gallery-upload.js',
+  'api/gallery-save.js',
   'api/gallery.js',
+  'lib/gallery-defaults.js',
   'assets/admin.js',
   'assets/gallery.js',
   'sitemap.xml',
@@ -26,6 +28,9 @@ for (const file of files) {
 const index = readFileSync('index.html', 'utf8');
 const sitemap = readFileSync('sitemap.xml', 'utf8');
 const adminApi = readFileSync('api/gallery-upload.js', 'utf8');
+const saveApi = readFileSync('api/gallery-save.js', 'utf8');
+const adminPage = readFileSync('admin.html', 'utf8');
+const adminJs = readFileSync('assets/admin.js', 'utf8');
 const required = [
   'Reset your garage. Reclaim your space.',
   'kdfWc9XF68KHtR1sByh8',
@@ -54,6 +59,9 @@ for (const file of files.filter(file => file.endsWith('.html') || file.endsWith(
   }
 }
 if (!adminApi.includes('verifySession(req)')) throw new Error('Gallery upload API must verify admin session.');
-if (!adminApi.includes('BLOB_READ_WRITE_TOKEN')) throw new Error('Gallery upload API must require blob storage configuration.');
+if (!saveApi.includes('verifySession(req)')) throw new Error('Gallery save API must verify admin session.');
+if (!adminApi.includes('BLOB_READ_WRITE_TOKEN') || !saveApi.includes('BLOB_READ_WRITE_TOKEN')) throw new Error('Gallery APIs must require blob storage configuration before writes.');
+if (!adminPage.includes('Privacy check before publishing')) throw new Error('Admin gallery manager must include customer-photo privacy warning.');
+if (!adminJs.includes('Move up') || !adminPage.includes('Save gallery order')) throw new Error('Admin page must include gallery reordering controls.');
 if (!readFileSync('robots.txt', 'utf8').includes('Disallow: /admin.html')) throw new Error('Admin page must be noindexed/disallowed.');
 console.log('Site content check passed.');
