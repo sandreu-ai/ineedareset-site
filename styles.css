@@ -343,6 +343,26 @@ nav a:hover::after { transform: scaleX(1); }
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; padding: 30px clamp(20px, 5vw, 72px); border-top: 1px solid rgba(255,255,255,0.16); color: var(--steel-light); font-weight: 900; background: rgba(0,0,0,0.34); }
 footer a,
 .footer-phone { color: var(--white); text-decoration: none; }
+.mobile-sticky-quote {
+  display: none;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 35;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 1000;
+  color: var(--white);
+  background: linear-gradient(180deg, var(--reset-red-hot), var(--reset-red) 52%, var(--reset-red-dark));
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 18px 46px rgba(0,0,0,0.42), var(--red-glow), inset 0 1px 0 rgba(255,255,255,0.42);
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -362,7 +382,26 @@ footer a,
   nav a:nth-of-type(n+9):not(.nav-cta) { display: none; }
 }
 @media (max-width: 1080px) {
-  nav a:not(.nav-cta) { display: none; }
+  .site-header { flex-wrap: wrap; gap: 10px; }
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 9px;
+    overflow-x: auto;
+    padding: 2px 0 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a:not(.nav-cta) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.16);
+  }
   .hero-proof { grid-template-columns: 1fr; }
 }
 @media (max-width: 880px) {
@@ -392,8 +431,14 @@ footer a,
   .quote-copy { position: static; }
 }
 @media (max-width: 560px) {
+  body { padding-bottom: 88px; }
   .site-header { padding-inline: 14px; }
-  .nav-cta { padding: 10px 13px; font-size: 0.74rem; }
+  .brand img { width: min(188px, 62vw); }
+  nav { font-size: 0.68rem; }
+  nav a:not(.nav-cta) { min-height: 34px; padding-inline: 10px; }
+  .nav-cta { display: none; }
+  .mobile-sticky-quote { display: flex; }
+  .mobile-secondary-cta { display: none; }
   .hero-copy h1 { font-size: 3.05rem; }
   .hero-lede { font-size: 1.05rem; }
   .button { width: 100%; }
