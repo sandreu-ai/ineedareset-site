@@ -20,23 +20,113 @@
     <link rel="stylesheet" href="./styles.css?v=gallery-manager-20260608" />
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "RESET",
-        "url": "https://ineedareset.co/",
-        "description": "Garage and space reset service for Ellis County and select DFW-area homeowners who need help sorting, organizing, and reclaiming overloaded spaces.",
-        "areaServed": ["Ellis County, TX", "Waxahachie, TX", "Midlothian, TX", "Red Oak, TX", "Ovilla, TX", "Ennis, TX", "Dallas-Fort Worth Metroplex, TX", "DFW, TX"],
-        "sameAs": ["https://www.instagram.com/resetgaragecleanouts/", "https://www.facebook.com/resetgaragecleanouts"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Garage and space reset services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garage reset planning" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "In-person garage reset" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sorting, organizing, and removal coordination" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garage storage and organization add-ons" } }
-          ]
-        }
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "LocalBusiness",
+                        "@id": "https://ineedareset.co/#business",
+                        "name": "RESET",
+                        "alternateName": "Reset Garage Clean-Outs",
+                        "url": "https://ineedareset.co/",
+                        "logo": "https://ineedareset.co/assets/reset-logo.png",
+                        "image": [
+                              "https://ineedareset.co/assets/reset-garage-photo-01.webp",
+                              "https://ineedareset.co/assets/reset-garage-photo-04.webp",
+                              "https://ineedareset.co/assets/reset-garage-photo-07.webp"
+                        ],
+                        "telephone": "+12146823435",
+                        "description": "Garage and space reset service for Ellis County and select DFW-area homeowners who need help sorting, organizing, and reclaiming overloaded spaces.",
+                        "areaServed": [
+                              "Ellis County, TX",
+                              "Waxahachie, TX",
+                              "Midlothian, TX",
+                              "Red Oak, TX",
+                              "Ovilla, TX",
+                              "Ennis, TX",
+                              "Dallas-Fort Worth Metroplex, TX"
+                        ],
+                        "sameAs": [
+                              "https://www.instagram.com/resetgaragecleanouts/",
+                              "https://www.facebook.com/resetgaragecleanouts"
+                        ],
+                        "hasOfferCatalog": {
+                              "@type": "OfferCatalog",
+                              "name": "Garage and space reset services",
+                              "itemListElement": [
+                                    {
+                                          "@type": "Offer",
+                                          "itemOffered": {
+                                                "@type": "Service",
+                                                "name": "Garage reset planning",
+                                                "provider": {
+                                                      "@id": "https://ineedareset.co/#business"
+                                                }
+                                          }
+                                    },
+                                    {
+                                          "@type": "Offer",
+                                          "itemOffered": {
+                                                "@type": "Service",
+                                                "name": "In-person garage reset",
+                                                "provider": {
+                                                      "@id": "https://ineedareset.co/#business"
+                                                }
+                                          }
+                                    },
+                                    {
+                                          "@type": "Offer",
+                                          "itemOffered": {
+                                                "@type": "Service",
+                                                "name": "Sorting, organizing, and removal coordination",
+                                                "provider": {
+                                                      "@id": "https://ineedareset.co/#business"
+                                                }
+                                          }
+                                    },
+                                    {
+                                          "@type": "Offer",
+                                          "itemOffered": {
+                                                "@type": "Service",
+                                                "name": "Garage storage and organization add-ons",
+                                                "provider": {
+                                                      "@id": "https://ineedareset.co/#business"
+                                                }
+                                          }
+                                    }
+                              ]
+                        }
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://ineedareset.co/#website",
+                        "name": "RESET",
+                        "url": "https://ineedareset.co/",
+                        "publisher": {
+                              "@id": "https://ineedareset.co/#business"
+                        }
+                  },
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://ineedareset.co/#webpage",
+                        "url": "https://ineedareset.co/",
+                        "name": "RESET | Garage & Space Resets in Ellis County",
+                        "isPartOf": {
+                              "@id": "https://ineedareset.co/#website"
+                        },
+                        "about": {
+                              "@id": "https://ineedareset.co/#business"
+                        }
+                  },
+                  {
+                        "@type": "FAQPage",
+                        "@id": "https://ineedareset.co/faq.html#faq",
+                        "url": "https://ineedareset.co/faq.html",
+                        "name": "Garage Reset FAQ",
+                        "isPartOf": {
+                              "@id": "https://ineedareset.co/#website"
+                        }
+                  }
+            ]
       }
     </script>
   </head>
@@ -51,6 +141,7 @@
         <a href="#reset-plans">AI mockup</a>
         <a href="#storage-add-ons">Storage add-ons</a>
         <a href="#reviews">Reviews</a>
+        <a href="./faq.html">FAQ</a>
         <a href="#service-areas">Areas</a>
         <a class="nav-cta" href="#quote">Get quote</a>
       </nav>
@@ -67,7 +158,7 @@
 
           <div class="hero-actions hero-actions-focused" aria-label="Primary actions">
             <a class="button primary" href="#quote">Get my reset quote</a>
-            <a class="button secondary" href="sms:+121****3435">Text photos / call</a>
+            <a class="button secondary" href="sms:+12146823435">Text photos / call</a>
           </div>
 
           <div class="hero-proof hero-proof-compact" aria-label="Trust signals and next steps">
@@ -206,7 +297,7 @@
             Serving Waxahachie, Midlothian, Red Oak, Ovilla, Ennis, nearby Ellis County communities, and select DFW-area projects.
           </p>
           <p class="quote-phone">
-            Text or call: <a href="sms:+121****3435">(214) 682-3435</a>
+            Text or call: <a href="sms:+12146823435">(214) 682-3435</a>
           </p>
           <div class="quote-socials" aria-label="Social links">
             <a href="https://www.google.com/maps/place/Reset+Garage+Clean-Outs/@32.364291,-96.7349885,10z/data=!4m8!3m7!1s0x9be71f9bfdf99ef:0x37ef5170345cea4b!8m2!3d32.364291!4d-96.7349886!9m1!1b1!16s%2Fg%2F11z4llvd3n" target="_blank" rel="noopener">Google reviews</a>
@@ -378,9 +469,10 @@
     <footer>
       <div>RESET</div>
       <div>Garage & space resets in Ellis County, Texas</div>
-      <a class="footer-phone" href="sms:+121****3435">Text or call (214) 682-3435</a>
+      <a class="footer-phone" href="sms:+12146823435">Text or call (214) 682-3435</a>
       <a href="https://www.instagram.com/resetgaragecleanouts/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/resetgaragecleanouts" target="_blank" rel="noopener">Facebook</a>
+      <a href="./faq.html">FAQ</a>
     </footer>
     <a class="mobile-sticky-quote" href="#quote" aria-label="Jump to the RESET quote form">Get my quote</a>
     <script src="./assets/gallery.js" defer></script>

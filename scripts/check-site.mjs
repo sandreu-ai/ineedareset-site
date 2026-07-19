@@ -4,6 +4,7 @@ const files = [
   'index.html',
   'ellis-county-garage-reset.html',
   'gallery.html',
+  'faq.html',
   'waxahachie-garage-reset.html',
   'midlothian-garage-reset.html',
   'red-oak-garage-reset.html',
@@ -27,6 +28,7 @@ for (const file of files) {
 }
 const index = readFileSync('index.html', 'utf8');
 const sitemap = readFileSync('sitemap.xml', 'utf8');
+const faqPage = readFileSync('faq.html', 'utf8');
 const adminApi = readFileSync('api/gallery-upload.js', 'utf8');
 const saveApi = readFileSync('api/gallery-save.js', 'utf8');
 const adminPage = readFileSync('admin.html', 'utf8');
@@ -41,7 +43,10 @@ const required = [
   'Reset the space. Then make it easier to keep.',
   'Overhead ceiling racks are quoted only after product and site review',
   'LocalBusiness',
+  'FAQPage',
+  'Garage reset questions, answered before you ask for a quote.',
   'gallery.html',
+  'faq.html',
   'waxahachie-garage-reset.html',
   'midlothian-garage-reset.html',
   'red-oak-garage-reset.html',
@@ -49,7 +54,7 @@ const required = [
   'ennis-garage-reset.html',
 ];
 for (const text of required) {
-  if (!index.includes(text) && !sitemap.includes(text)) throw new Error(`Missing required text: ${text}`);
+  if (!index.includes(text) && !sitemap.includes(text) && !faqPage.includes(text)) throw new Error(`Missing required text: ${text}`);
 }
 const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?', '6a1f571c2b348da0f75c1cf7', 'chat-widget/loader.js'];
 for (const file of files.filter(file => file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.txt'))) {
