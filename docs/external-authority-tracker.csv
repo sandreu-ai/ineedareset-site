@@ -1,0 +1,11 @@
+platform,status,priority,canonical_field_check,next_action,privacy_note
+Google Business Profile,existing-linked-from-site,highest,"name; category; service area; phone; website; logo; hours; services; photos; FAQs; reviews","Audit live profile against entity-profile.md and add services/FAQs/photos if missing","Do not publish private address; keep photo redaction rules"
+Bing Places,unknown,high,"name; service area; phone; website; categories","Create or sync after Google Business Profile fields are final","Use service-area listing if available"
+Apple Business Connect / Maps,unknown,high,"name; service area; phone; website; categories","Create/verify if local search target warrants it","Avoid private address exposure"
+Facebook,existing,high,"name; description; phone; website; service area; logo","Align with canonical description and add recent proof posts","Use approved/public project photos only"
+Instagram,existing,high,"bio; category; link; service area; logo/avatar","Align bio/link and add before-after/service highlights","Blur customer identifiers before posting"
+Yelp,not-started,medium,"name; phone; website; service area; categories","Evaluate lead quality before creating","Avoid unmanaged lead source if not monitored"
+Nextdoor,not-started,medium,"name; phone; website; service area; categories","Evaluate fit for neighborhood referrals","Use public business contact only"
+BBB / Angi,not-started,low-medium,"name; phone; website; categories","Evaluate cost/benefit before creating","Avoid paid listings unless ROI is clear"
+Local chamber/community directory,not-started,medium,"name; phone; website; description","Pursue after public contact fields are final","Use service-area language"
+Supplier/manufacturer directories,not-started,low-medium,"name; website; service area; offerings","Consider if storage products/partners qualify","No customer project details without consent"
