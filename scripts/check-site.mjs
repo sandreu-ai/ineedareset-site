@@ -5,6 +5,7 @@ const files = [
   'ellis-county-garage-reset.html',
   'gallery.html',
   'faq.html',
+  'garage-reset-pricing.html',
   'waxahachie-garage-reset.html',
   'midlothian-garage-reset.html',
   'red-oak-garage-reset.html',
@@ -29,6 +30,7 @@ for (const file of files) {
 const index = readFileSync('index.html', 'utf8');
 const sitemap = readFileSync('sitemap.xml', 'utf8');
 const faqPage = readFileSync('faq.html', 'utf8');
+const pricingPage = readFileSync('garage-reset-pricing.html', 'utf8');
 const adminApi = readFileSync('api/gallery-upload.js', 'utf8');
 const saveApi = readFileSync('api/gallery-save.js', 'utf8');
 const adminPage = readFileSync('admin.html', 'utf8');
@@ -67,6 +69,7 @@ if (!adminApi.includes('verifySession(req)')) throw new Error('Gallery upload AP
 if (!saveApi.includes('verifySession(req)')) throw new Error('Gallery save API must verify admin session.');
 if (!adminApi.includes('BLOB_READ_WRITE_TOKEN') || !saveApi.includes('BLOB_READ_WRITE_TOKEN')) throw new Error('Gallery APIs must require blob storage configuration before writes.');
 if (!adminPage.includes('Privacy check before publishing')) throw new Error('Admin gallery manager must include customer-photo privacy warning.');
+if (!pricingPage.includes('What affects the cost of a garage reset?') || !pricingPage.includes('FAQPage') || !sitemap.includes('garage-reset-pricing.html')) throw new Error('Pricing guide must be published with FAQ schema and sitemap coverage.');
 if (!adminJs.includes('Move up') || !adminPage.includes('Save gallery order')) throw new Error('Admin page must include gallery reordering controls.');
 if (!readFileSync('robots.txt', 'utf8').includes('Disallow: /admin.html')) throw new Error('Admin page must be noindexed/disallowed.');
 console.log('Site content check passed.');
