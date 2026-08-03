@@ -498,3 +498,7 @@ footer a,
   .gallery-manager-card img { height: 260px; }
   .hero-proof-compact { grid-template-columns: 1fr; }
 }
+
+.answer-link-list { display: grid; gap: 12px; padding-left: 20px; margin: 22px 0 0; }
+.answer-link-list a { color: var(--white); font-weight: 1000; text-decoration-color: var(--reset-red); text-underline-offset: 4px; }
+.faq-card a { color: var(--graphite); text-decoration-color: var(--reset-red); text-underline-offset: 4px; }
