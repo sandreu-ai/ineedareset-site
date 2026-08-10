@@ -1,7 +1,7 @@
 # RESET Canonical Entity Profile
 
 Status: Draft source of truth for Entity SEO / AI Visibility. Verify each field before copying to external platforms.
-Last updated: 2026-07-19
+Last updated: 2026-08-10
 
 ## Canonical business entity
 
@@ -57,7 +57,7 @@ Use only fields supported by visible site content or verified business data.
 
 ## External citation checklist
 
-- [ ] Google Business Profile: verify exact name, category, service area, phone, website, logo, hours, photos, services, FAQs.
+- [ ] Google Business Profile: verify exact name, category, service area, phone, website, logo, hours, photos, services, FAQs. See `docs/gbp-citation-packet.md`.
 - [ ] Bing Places: create/sync from GBP after fields are final.
 - [ ] Apple Business Connect / Apple Maps: create or verify service-area listing if appropriate.
 - [ ] Facebook: align name, description, phone, website, service area, logo.
@@ -68,8 +68,8 @@ Use only fields supported by visible site content or verified business data.
 
 ## Next site implementation tasks
 
-1. Add an expanded JSON-LD graph on homepage using this entity profile.
-2. Add FAQPage schema after FAQ expansion.
-3. Add BreadcrumbList schema to city and gallery pages.
-4. Build `/faq.html` and one original pricing/process guide.
+1. Keep page-level JSON-LD graphs current across homepage, city pages, answer pages, pricing, FAQ, and gallery.
+2. Keep `llms.txt` aligned with sitemap pages and preferred entity language.
+3. Use `docs/gbp-citation-packet.md` before external citation rollout.
+4. Add Review/AggregateRating schema only when visible review counts and details are verified.
 5. Keep this file updated before any external citation rollout.

@@ -6,6 +6,13 @@ const files = [
   'gallery.html',
   'faq.html',
   'garage-reset-pricing.html',
+  'garage-reset-vs-junk-removal.html',
+  'garage-reset-vs-professional-organizer.html',
+  'garage-reset-vs-dumpster-rental.html',
+  'diy-garage-organization-vs-hiring-help.html',
+  'garage-cleanout-for-elderly-parents.html',
+  'garage-reset-after-moving.html',
+  'prepare-for-garage-reset-appointment.html',
   'waxahachie-garage-reset.html',
   'midlothian-garage-reset.html',
   'red-oak-garage-reset.html',
@@ -54,11 +61,13 @@ const required = [
   'red-oak-garage-reset.html',
   'ovilla-garage-reset.html',
   'ennis-garage-reset.html',
+  'garage-reset-vs-junk-removal.html',
+  'garage-reset-vs-professional-organizer.html',
 ];
 for (const text of required) {
   if (!index.includes(text) && !sitemap.includes(text) && !faqPage.includes(text)) throw new Error(`Missing required text: ${text}`);
 }
-const banned = ['clean-out', 'Photos link, if available', 'What needs to be cleaned out?', '6a1f571c2b348da0f75c1cf7', 'chat-widget/loader.js'];
+const banned = ['Photos link, if available', 'What needs to be cleaned out?', '6a1f571c2b348da0f75c1cf7', 'chat-widget/loader.js', '+121****3435'];
 for (const file of files.filter(file => file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.txt'))) {
   const text = readFileSync(file, 'utf8');
   for (const phrase of banned) {
@@ -72,4 +81,6 @@ if (!adminPage.includes('Privacy check before publishing')) throw new Error('Adm
 if (!pricingPage.includes('What affects the cost of a garage reset?') || !pricingPage.includes('FAQPage') || !sitemap.includes('garage-reset-pricing.html')) throw new Error('Pricing guide must be published with FAQ schema and sitemap coverage.');
 if (!adminJs.includes('Move up') || !adminPage.includes('Save gallery order')) throw new Error('Admin page must include gallery reordering controls.');
 if (!readFileSync('robots.txt', 'utf8').includes('Disallow: /admin.html')) throw new Error('Admin page must be noindexed/disallowed.');
+if (!readFileSync('llms.txt', 'utf8').includes('Garage reset vs junk removal')) throw new Error('llms.txt must include expanded AEO answer pages.');
+if (!readFileSync('docs/gbp-citation-packet.md', 'utf8').includes('Google Business Profile description')) throw new Error('GBP/citation packet missing.');
 console.log('Site content check passed.');
